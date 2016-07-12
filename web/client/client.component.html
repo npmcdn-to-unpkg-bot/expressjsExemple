@@ -1,0 +1,28 @@
+<div>
+    <h1>{{titre}}</h1>
+    <div>
+        <button (click)="ajouterClient()" type="button" class="btn btn-default">Nouveau client</button>
+    </div>
+    <div *ngIf="enrClient">
+         <div>
+            <button (click)="setPrecedent()" type="button" class="btn btn-default">Rec</button>
+            <button (click)="setSuivant()" type="button" class="btn btn-default">Suiv</button>
+        </div>
+       <div class="form-group">
+            <label>nom :</label>
+            <input type="text" class="form-control" placeholder="Obligatoire" [(ngModel)]="enrClient.nom">
+        </div>
+        <div class="form-group">
+            <label for="prenom">Prénom :</label>
+            <input type="text" class="form-control" [(ngModel)]="enrClient.prenom">
+        </div>
+        <div class="form-group">
+            <label for="age">Age :</label>
+            <input type="number" class="form-control" [(ngModel)]="enrClient.age">
+        </div>
+    <div>
+        <button (click)="onSubmit()">Valider</button>
+        <button (click)="supprimerClient()" type="button" class="btn btn-default">Supprimer</button>
+    </div>
+    </div>
+</div>
