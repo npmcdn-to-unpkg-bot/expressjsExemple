@@ -11,9 +11,10 @@ let app = express();
 let appCommande = new AppPrincipal();
 
 //middleware qui trace des requetes recues
-/*
-     ecrire ici un middleware qui trace toutes les requetes recues ainsi que l'heure
-*/
+app.use((req, res, next) => {
+    appCommande.ecrireLog(url.parse(req.url).pathname);
+    next();
+});
 
 // Configuration
 app.use(bodyParser.urlencoded({ extended: true })); //encodage UTF8
